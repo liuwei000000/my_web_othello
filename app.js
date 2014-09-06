@@ -412,7 +412,7 @@ var othello = {};
   }
 
   function setUpUIToChooseMove(gameTree) {
-    $('#message').text('Choose your move.');
+    $('#message').text('该您走棋啦！');
     gameTree.moves.forEach(function (m, i) {
       if (m.isPassingMove) {
         $('#console').append(
@@ -444,6 +444,7 @@ var othello = {};
 
   function chooseMoveByAI(gameTree, ai) {
     $('#message').text('Now thinking...');
+	//$('#message').
     setTimeout(
       function () {
         shiftToNewGameTree(
