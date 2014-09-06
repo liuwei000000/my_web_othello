@@ -398,7 +398,12 @@ var othello = {};
     ss.push('</table>');
 
     $('#game-board').html(ss.join(''));
-    $('#current-player-name').text(player);
+	if (player == WHITE) {
+    	$('#current-player-name').text("白棋");
+	}
+	if (player == BLACK) {
+    	$('#current-player-name').text("黑棋");
+	}
   }
 
   function resetUI() {
