@@ -34,7 +34,6 @@
 <link href="vendor/twitter-bootstrap/css/bootstrap-small.css" rel="stylesheet">
 <link href="app.css" rel="stylesheet">
 </head>
-
 <body>
 <div class="p-index"> 
   <!-- 向上键 -->
@@ -95,6 +94,8 @@
         </div>
         <button id="start-button" class="btn btn-primary" type="submit">点我开始</button>
       </div>
+      <div style="font-size:18px">程序由刘卫制作，欢迎到xx展台交流，微信David_lwlw</div>
+      <div style="position:relative;right:0em">Copyright©2014.10.2 版权所有</div>
     </div>
   </section>
 </div>
@@ -112,76 +113,14 @@
 <script type="text/javascript" src="vendor/twitter-bootstrap/js/bootstrap.min.js"></script> 
 <script type="text/javascript" src="app.js"></script> 
 <script>
-var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MzA4NDk5MDYwOQ==&mid=200441816&idx=1&sn=33279069e4c747760648c26969efbee6#rd';
-dataForWeixin = {
-    appid: 'wx13b7a88076a07cba', 
-    img_url: './success/images/wxshare.jpg',
-    img_width: '100',
-    img_height: '100',
-    link: 'http://dh.xjwdm.com//youxi/',
-    title: '我是认真的，千万不要来南宁',
-    desc: "我是认真的，千万不要来南宁",
-    callback:function(){document.location.href = mebtnopenurl;}
-};
-
-$('#postinfo_btn').bind('click', function(){
-
-    if(!$('#name').val()){
-        systemmsg('你确定还要来南宁？！');
-        return;
-    }
-    if( !isMobile($('#mobile').val()) ){
-        systemmsg('请填写正确的手机号！');
-        return;
-    }
-    var params = {
-        pid : $('.chosed').attr('pv'),
-    	name : $('#name').val(),
-    	mobile : $('#mobile').val()
-    };
-    $.ajax({
-		type : 'POST',
-		url : 'http://dh.xjwdm.com/youxi/',
-		data : params,
-		dataType : 'json',
-		success : function(response) {
-			if(response.ret==1){
-                 $('#name').val('');
-                 $('#mobile').val('');
-                 systemmsg("您的信息提交成功！", function(){
-                    $(".btn-sub").closest(".m-page").next('.m-page').css('top',$(window).height()).addClass("active").animate({"top":0}, 1000);
-                    newM = page_n + 1 ;
-                    page_n = newM;
-                 });
-			}else{
-                 systemmsg(response.msg);
-             }
-		}
-	});
-});
-
-$('.list-pro').find('li').bind('click', function(){
-  $(this).addClass('chosed').siblings().removeClass('chosed');
-});
-
 window.onload = function(){
   changeOpen();
 }
-/*window.onload = function(){
-  changeClose();
-  var lottery = new Lottery($('#j-mengban')[0], $('#r-cover').val(), 'image',$('.imgHeight').width() , $(window).height(), function(){
-       $('#j-mengban').fadeOut(200);
-       changeOpen();
-       $("#car_audio")[0].play();
-  });
-  lottery.init();
-  setTimeout(function(){$('.imgHeight').show();}, 500);
-}*/
 
 if(window.screen.height <= 480){
   $('[data-bk="success/images/s6.jpg"]').css('background-position', '0 -30px');
   $('[src="success/images/txt12_2.png"]').hide();
-}
+} 
 </script>
 <div style='display:none;' data-role="none" hidden> </div>
 </body>
