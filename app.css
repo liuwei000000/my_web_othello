@@ -18,7 +18,7 @@ h1.title {
 
 #message
 {
-  margin-top: 1em;
+  margin-top: 0em;
 }
 
 #preference-pane
@@ -32,15 +32,14 @@ h1.title {
 }
 #swap-player-types-button
 {
-  position: relative;
-  top: -2em;
-  left: 18em;
+	position:absolute;
+	right:5em;
+	top:5.5em;	
 }
 
 #start-button
 {
   position: relative;
-  left: -2.5em;
 }
 
 #add-new-ai-button

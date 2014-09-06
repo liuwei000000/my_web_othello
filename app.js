@@ -504,11 +504,13 @@ var othello = {};
   function resetGame() {
     $('#preference-pane').removeClass('disabled');
     $('#preference-pane :input').removeAttr('disabled');
+	$('#swap-player-types-button').removeAttr('disabled', 'disabled');
   }
 
   function startNewGame() {
     $('#preference-pane').addClass('disabled');
     $('#preference-pane :input').attr('disabled', 'disabled');
+	$('#swap-player-types-button').attr('disabled', 'disabled');
     playerTypeTable[BLACK] = $('#black-player-type').val();
     playerTypeTable[WHITE] = $('#white-player-type').val();
     shiftToNewGameTree(makeGameTree(makeInitialGameBoard(), BLACK, false, 1));
