@@ -471,6 +471,12 @@ var othello = {};
     var t = $('#black-player-type').val();
     $('#black-player-type').val($('#white-player-type').val());
     $('#white-player-type').val(t);
+	//改变走棋方
+	if ($('#player-color-computer').text()=="白") {
+  		$('#player-color-computer').text("黑");
+	} else {
+		$('#player-color-computer').text("白");
+	}
   }
 
   function shiftToNewGameTree(gameTree) {

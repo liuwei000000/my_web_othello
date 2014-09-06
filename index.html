@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>黑白棋 AI 人工智能</title>
+<title>黑白棋 AI 对弈机器人</title>
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,7 +40,7 @@
   <!-- 向上键 -->
   <section class="u-arrow"><img src="success/images/btn01_arrow.png" width="28"></section>
   <!-- end -->
-  <section class="m-page m-page2 v-page" data-id='16267' data-type='info_nomore'>
+  <section class="m-page m-page2 v-page hide" data-id='16267' data-type='info_nomore'>
     <div class="m-img" data-bk='success/images/0b.jpg'
         style="background:url(./success/images/0b.jpg) center top no-repeat; background-size:cover;"> <img src="success/images/0_txt.png" width="100%" class="showTxt txt-s3" /> </div>
   </section>
@@ -60,41 +60,43 @@
     <div class="m-img m-img01 lazy-bk" data-bk='success/images/4b.jpg'
         style="background:url(./success/images/4b.jpg) center top no-repeat; background-size:cover;"> <img src="success/images/4_txt.png" width="100%" class="showTxt txt-s3" /> </div>
   </section>
-  <section data-page="2" class="m-page m-page2 v-page hide" data-id='16269' data-type='info_nomore'>
-    <div id="main" class="container">
-      <div class="heading">
-        <h1 class="title">黑白棋AI-机器人</h1>
-      </div>
-      <div id="game-board"></div>
-      <div id="current-player">Current player: <span id="current-player-name">-</span></div>
-      <div id="message"></div>
-      <div id="console"></div>
-      <div id="preference-pane">
-        <div id="player-type-forms">
-          <label> Black:
-            <select id="black-player-type">
-              <option value="human" selected>Human</option>
-              <option value="test-4">Test AI (looks ahead 4 moves)</option>
-              <option value="weighted-4">Weighted AI (looks ahead 4 moves)</option>
-            </select>
-          </label>
-          <label> White:
-            <select id="white-player-type">
-              <option value="human">Human</option>
-              <option value="test-4">Test AI (looks ahead 4 moves)</option>
-              <option value="weighted-4" selected>Weighted AI (looks ahead 4 moves)</option>
-            </select>
-          </label>
+  <section data-page="2" class="m-page m-page2 v-page " data-id='16269' data-type='info_nomore'>
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="heading">
+          <h1 class="title">黑白棋AI-对弈机器人</h1>
+          <h3 style="text-align:center;position: relative;right:-8em">by 刘卫</h3>
         </div>
-        <button id="swap-player-types-button" class="btn" type="button">⇅</button>
-        <div>
-          <input id="new-ai-url" type="text" value="http://kana.github.io/othello-js/random-ai.js">
-          <button id="add-new-ai-button" class="btn" type="button">Add new AI</button>
-        </div>
-        <button id="start-button" class="btn btn-primary" type="submit">Start a new game</button>
       </div>
     </div>
-  </section> 
+    <div id="main" class="container">
+      <div id="game-board"></div>
+      <div id="current-player" style="font-size:18px">小黑AI执<strong><span id="player-color-computer" style="color:#F00;">白</span></strong>棋</div>
+      <div id="current-player">走棋者方: <span id="current-player-name">-</span></div>
+      <div id="message" style="font-size:18px">哇哈哈哈哈哈</div>
+      <div id="console" style="font-size:18px"></div>
+      <div id="preference-pane">
+        <div id="player-type-forms">
+          <label style="display:none"> Black:
+            <select id="black-player-type">
+              <option value="human" selected>Human</option>
+              <option value="test-4">1</option>
+              <option value="weighted-4">2</option>
+            </select>
+          </label>
+          <label style="display:none"> White:
+            <select id="white-player-type">
+              <option value="human">Human</option>
+              <option value="test-4">1</option>
+              <option value="weighted-4" selected>2</option>
+            </select>
+          </label>
+        </div>
+        <button id="swap-player-types-button" class="btn" type="button">交换颜色</button>
+        <button id="start-button" class="btn btn-primary" type="submit">点我开始</button>
+      </div>
+    </div>
+  </section>
 </div>
 <div id="systemmsg_box" class="share-popup" style="display:none !important;">
   <div class="alert-div">

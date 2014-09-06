@@ -34,6 +34,13 @@ h1.title {
 {
   position: relative;
   top: -2em;
+  left: 18em;
+}
+
+#start-button
+{
+  position: relative;
+  left: -2.5em;
 }
 
 #add-new-ai-button
