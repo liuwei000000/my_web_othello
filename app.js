@@ -460,11 +460,27 @@ var othello = {};
     for (var x = 0; x < N; x++)
       for (var y = 0; y < N; y++)
         nt[board[[x, y]]]++;
-
+		
+	var msg = '';
+	var fens = (Math.abs(nt[WHITE] - nt[BLACK])/(0.64*2));
+	if  (nt[BLACK] == nt[WHITE]) {
+		msg = '平手,您打败了全国<span style="color:#F00;">' + 49.5 + '%</span>的选手';
+	} else {
+		if ( (playerTypeTable[BLACK] == 'human' && (nt[WHITE] < nt[BLACK])) ||
+			(playerTypeTable[WHITE] == 'human' && (nt[WHITE] > nt[BLACK])) )
+		{
+			msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手';
+		} else {
+			msg = '您输了! 不过您打败了全国<span style="color:#F00;">' + (50-fens).toFixed(1) + '%</span>的选手，再接再厉';
+		}
+	}
+	systemmsg(msg);
+	
+	$('#message').attr('style','font-size:18px; color:#F00');
     $('#message').text(
       nt[BLACK] == nt[WHITE]
-      ? 'The game ends in a draw.'
-      : 'The winner is ' + (nt[WHITE] < nt[BLACK] ? BLACK : WHITE) + '.'
+      ? '平手'
+      : ' 赢者是 ' + (nt[WHITE] < nt[BLACK] ? '黑棋' : '白棋') + '.'
     );
   }
 

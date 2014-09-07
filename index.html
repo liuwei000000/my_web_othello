@@ -73,7 +73,7 @@
       <button id="swap-player-types-button" class="btn" type="button">交换颜色</button>
       <div id="game-board"></div>
       <div id="current-player">走棋者方: <span id="current-player-name">-</span></div>
-      <div id="message" style="font-size:18px;">哇哈哈，想<span style="color:#F00;">挑战</span>就点“开始”</div>
+      <div id="message" style="font-size:18px;">哇哈哈，想<span style="color:#F00;">挑战</span>就点“开始”,赢了送电子书</div>
       <div id="console" style="font-size:18px"></div>
       <div id="preference-pane">
         <div id="player-type-forms">
@@ -95,13 +95,13 @@
         <button id="start-button" class="btn btn-primary" type="submit">点我开始</button>
       </div>
       <div style="font-size:18px">程序由刘卫制作，欢迎到xx展台交流，微信David_lwlw</div>
-      <div style="position:relative;right:0em">Copyright©2014.10.2 版权所有</div>
+      <div style="position:relative;right:0em" id="postinfo_btn">Copyright©2014.10.2 版权所有</div>
     </div>
   </section>
 </div>
 <div id="systemmsg_box" class="share-popup" style="display:none !important;">
   <div class="alert-div">
-    <p class="tc" id="systemmsg_text">您的手机号码输入错误！</p>
+    <p class="tc" id="systemmsg_text">系统信息</p>
     <p class="tc" id="systemmsg_btn"><img src="success/images/btn_sure.png" width="60%" /></p>
   </div>
 </div>
@@ -113,6 +113,13 @@
 <script type="text/javascript" src="vendor/twitter-bootstrap/js/bootstrap.min.js"></script> 
 <script type="text/javascript" src="app.js"></script> 
 <script>
+$('#postinfo_btn').bind('click', function(){
+    if(!$('#name').val()){
+        systemmsg('您赢啦， 不过您打败了全国<span style="color:#F00;">5%</span>的选手，再接再厉');
+        return;
+    }
+})
+
 window.onload = function(){
   changeOpen();
 }
