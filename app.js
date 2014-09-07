@@ -412,16 +412,12 @@ var othello = {};
   }
 
   function setUpUIToChooseMove(gameTree) {
+	//$('#message').removeAttr('color');
+	$('#message').attr('style','font-size:18px;');
     $('#message').text('该您走棋啦！');
     gameTree.moves.forEach(function (m, i) {
       if (m.isPassingMove) {
-        $('#console').append(
-          $('<input type="button" class="btn">')
-          .val(makeLabelForMove(m))
-          .click(function () {
             shiftToNewGameTree(force(m.gameTreePromise));
-          })
-        );
       } else {
         $('#cell' + m.x + m.y)
         .click(function () {
@@ -443,7 +439,8 @@ var othello = {};
   }
 
   function chooseMoveByAI(gameTree, ai) {
-    $('#message').text('Now thinking...');
+	$('#message').attr('style','font-size:18px; color:#F00');
+    $('#message').text('小黑正在思考，请稍等');
 	//$('#message').
     setTimeout(
       function () {
