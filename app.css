@@ -23,7 +23,7 @@ h1.title {
 
 #preference-pane
 {
-  margin-top: 1em;
+  margin-top: 0.6em;
 }
 
 #player-type-forms
@@ -34,7 +34,7 @@ h1.title {
 {
 	position:absolute;
 	right:5em;
-	top:5.5em;	
+	top:4em;	
 }
 
 #start-button

@@ -783,10 +783,10 @@ table td[class*="span"], table th[class*="span"], .row-fluid table td[class*="sp
 	background-color: #c4e3f3;
 }
 .navbar-inner {
-	min-height: 45px;
+	min-height: 40px;
 	padding-right: 20px;
 	padding-left: 20px;
-	padding-top:15px;
+	padding-top:5px;
 	background-color: #fafafa;
 	background-image: -moz-linear-gradient(top, #631f00, #f2f2f2);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#631f00), to(#f2f2f2));
