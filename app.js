@@ -469,13 +469,13 @@ var othello = {};
 		if ( (playerTypeTable[BLACK] == 'human' && (nt[WHITE] < nt[BLACK])) ||
 			(playerTypeTable[WHITE] == 'human' && (nt[WHITE] > nt[BLACK])) )
 		{
-			msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手';
+			msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手，关闭后，棋盘下方下载电子书';
 		} else {
 			msg = '您输了! 不过您打败了全国<span style="color:#F00;">' + (50-fens).toFixed(1) + '%</span>的选手，再接再厉';
 		}
 	}
 	systemmsg(msg);
-	
+		
 	$('#message').attr('style','font-size:18px; color:#F00');
     $('#message').text(
       nt[BLACK] == nt[WHITE]
