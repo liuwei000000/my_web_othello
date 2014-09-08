@@ -472,16 +472,16 @@ var othello = {};
 		{
 			if (win_sum > 50) {
 				msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手，关闭后，获得四本电子书';
-				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello （en）</a>, <a href="success/faster.pdf">奥赛乐技巧速成</a>, <a href="success/game.pdf">游戏编程</a>');
+				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello （en）</a>, <a href="success/faster.pdf">奥赛乐技巧速成</a>, <a href="success/game.pdf">游戏编程</a><br/><strong>ios下载方法请自行研究</strong>');
 			} else if(win_sum > 40) {
 				msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手，关闭后，获得三本电子书';
-				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello（en）</a>, <a href="success/faster.pdf">奥赛乐技巧速成</a>');
+				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello（en）</a>, <a href="success/faster.pdf">奥赛乐技巧速成</a><br/><strong>ios下载方法请自行研究</strong>');
 			} else if(win_sum > 25) {
 				msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手，关闭后，获得两本电子书';
-				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello（en）</a>');
+				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>,<a href="success/book_en.pdf">Othello（en）</a><br/><strong>ios下载方法请自行研究</strong>');
 			} else {
 				msg = '您赢了！ 您打败了全国<span style="color:#F00;">' + (fens + 50).toFixed(1) + '%</span>的选手，关闭后，获得一本电子书';
-				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a>');
+				$('#console').html('<span style="color:#F00;"><strong>电子书阅读</strong>：</span><a href="success/book_cn_1.02.pdf">黑白棋指南</a><br/><strong>ios下载方法请自行研究</strong>');
 			}
 		} else {
 			msg = '您输了! 不过您打败了全国<span style="color:#F00;">' + (50-fens).toFixed(1) + '%</span>的选手，再接再厉赢取电子书';
