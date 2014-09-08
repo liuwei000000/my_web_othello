@@ -1,3 +1,6 @@
 第一招，最大最小搜索
 第二招，优化，剪枝，内存。。。
 第三招，局面评估
+
+
+javascript 加密： http://www.jb51.net/tools/packer.htm
