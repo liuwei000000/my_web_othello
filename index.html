@@ -71,10 +71,10 @@
     <div id="main" class="container">
       <div id="current-player" style="font-size:18px; height:23px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小黑AI执<strong><span id="player-color-computer" style="color:#F00;">白</span></strong>棋</div>
       <button id="swap-player-types-button" class="btn" type="button">交换颜色</button>
-      <div id="current-player">走棋者方: <span id="current-player-name">-</span></div>
+      <div id="current-player">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;走棋者方: <span id="current-player-name">-</span></div>
       <div id="game-board"></div>
       <div id="console" style="font-size:20px"></div>
-      <div id="message" style="font-size:18px;">哇哈哈，想<span style="color:#F00;">挑战</span>就点“开始”,赢了送电子书（共4本）</div>
+      <div id="message" style="font-size:18px;">哇哈哈，想<span style="color:#F00;">挑战</span>点“开始”,赢了送电子书（全4本），ios下载方法请自行研究</div>
       <div id="preference-pane">
         <div id="player-type-forms">
           <label style="display:none"> Black:
@@ -123,6 +123,18 @@ $('#postinfo_btn').bind('click', function(){
 window.onload = function(){
   changeOpen();
 }
+
+
+function downloadFile(fileName, content){  
+    var aLink = document.createElement('a');
+    var blob = new Blob([content]);
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错, 感谢 Barret Lee 的反馈
+    aLink.download = fileName;
+    aLink.href = URL.createObjectURL(blob);
+    aLink.dispatchEvent(evt);
+}
+ 
 
 /*if(window.screen.height <= 300){
   $('[data-bk="success/images/s6.jpg"]').css('background-position', '0 -30px');
