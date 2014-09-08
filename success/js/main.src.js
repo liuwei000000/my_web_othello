@@ -5,13 +5,11 @@ var Msize = $(".m-page").size(),
     firstP = null,
     newM = null,
     p_b = null,
-    indexP = null,
     move = null,
     start = true,
     startM = null,
     position = null,
     mapS = null,
-    canmove = false,
     textNode = [],
     textInt = 1,
     mousedown = null,
@@ -187,11 +185,7 @@ function V_start(a) {
 function page_v_touchmove(b) {
     b.preventDefault();
     b.stopPropagation();
-    if (page_n == Msize) {
-        //window.location.href = "http://nnqx520.duapp.com/love/";
-				window.location.href = "#";
-        return
-    }
+
     if (start || startM) {
         startM = true;
         if (b.type == "touchmove") {
@@ -203,37 +197,31 @@ function page_v_touchmove(b) {
                 moveP2 = b.x || b.pageX
             }
         }
-        page_n == 1 ? indexP = false : indexP = true
     }
     if (moveP && startM) {
         if (!p_b) {
             p_b = true;
             position = moveP - initP > 0 ? true : false;
             if (position) {
-                if (indexP) {
+                if (page_n != 1) {
                     newM = page_n - 1;
                     $(".m-page").eq(newM - 1).addClass("active").css("top", -v_h);
                     move = true
                 } else {
-                    if (canmove) {
-                        move = true;
-                        newM = Msize;
-                        $(".m-page").eq(newM - 1).addClass("active").css("top", -v_h)
-                    } else {
-                        move = false
-                    }
+					newM = 1
+                    move = false
                 }
             } else {
                 if (page_n != Msize) {
                     newM = page_n + 1
+					$(".m-page").eq(newM - 1).addClass("active").css("top", v_h);
+                	move = true
                 } else {
                     newM = 1
+					move = false
                 }
-                $(".m-page").eq(newM - 1).addClass("active").css("top", v_h);
-                move = true
             }
         }
-
         if (move) {
             start = false;
             var a = parseInt($(".m-page").eq(newM - 1).css("top"));
@@ -262,7 +250,6 @@ function page_h_touchmove(b) {
                 moveP = b.x || b.pageX
             }
         }
-        page_n == 1 ? indexP = false : indexP = true
     }
     if (moveP && startM) {
         if (!p_b) {
@@ -278,11 +265,11 @@ function page_h_touchmove(b) {
                 move = true
             } else {
                 if (page_n != Msize) {
-                    newM = page_n + 2
+                    newM = page_n + 1
                 } else {
                     newM = 1
                 }
-                $(".m-page").eq(newM - 2).addClass("active").css("left", v_w);
+                $(".m-page").eq(newM - 1).addClass("active").css("left", v_w);
                 move = true
             }
         }

@@ -109,37 +109,22 @@
 <script type="text/javascript" src="success/js/easing.min.js"></script> 
 <script type="text/javascript" src="success/js/main.min.js"></script> 
 <script type="text/javascript" src="success/js/lottery.min.js"></script> 
-<script type="text/javascript" src="success/js/com.js"></script> 
+<script type="text/javascript" src="success/js/com.min.js"></script> 
 <script type="text/javascript" src="vendor/twitter-bootstrap/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="app.js"></script> 
+<script type="text/javascript" src="app.min.js"></script>
 <script>
+/*
 $('#postinfo_btn').bind('click', function(){
     if(!$('#name').val()){
         systemmsg('您赢啦， 您打败了全国<span style="color:#F00;">5%</span>的选手，关闭后，棋盘下方下载电子书');
         return;
     }
 })
-
+*/
 window.onload = function(){
   changeOpen();
 }
 
-
-function downloadFile(fileName, content){  
-    var aLink = document.createElement('a');
-    var blob = new Blob([content]);
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错, 感谢 Barret Lee 的反馈
-    aLink.download = fileName;
-    aLink.href = URL.createObjectURL(blob);
-    aLink.dispatchEvent(evt);
-}
- 
-
-/*if(window.screen.height <= 300){
-  $('[data-bk="success/images/s6.jpg"]').css('background-position', '0 -30px');
-  $('[src="success/images/txt12_2.png"]').hide();
-} */
 </script>
 <div style='display:none;' data-role="none" hidden> </div>
 </body>
